@@ -9,17 +9,20 @@
           line-height: 70px;
           font-family: impact;
           padding: 20px;
+          color: white;
         }
        
         body {
           background-color:#333;
+          width: 100%;
+          height: 100%;
         }
         
         .output {
           font-family: 'Source Code Pro', monospace;
           color: white;
           h1 {
-            font-size:30px;
+            font-size:50px;
           }
         }
         
@@ -94,9 +97,7 @@
         speedWait = 1000, // Wait between typing and backspacing
         speedBetweenLines = 1000, //Wait between first and second lines
         speedBackspace = 25; //Backspace Speed
-      //Run the loop
-      typeWriter("output", textArray);
-
+      
       function typeWriter(id, ar) {
         var element = $("#" + id),
           aString = ar[a],
@@ -162,5 +163,9 @@
           }
         }
       }
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        typeWriter("output", textArray);
+     });
   </script>
 </html>
