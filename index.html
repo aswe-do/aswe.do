@@ -8,7 +8,7 @@
           width: 30px;
           line-height: 70px;
           font-family: impact;
-          padding: 20px;
+          padding-left: 20px;
           color: white;
         }
        
@@ -19,6 +19,7 @@
         }
         
         .output {
+          padding-left: 20px;
           font-family: 'Source Code Pro', monospace;
           color: white;
           h1 {
@@ -38,8 +39,8 @@
           animation-iteration-count: infinite;
         }
         h1.cursor::after {
-          height: 24px;
-          width: 13px;
+          height: 54px;
+          width: 23px;
         }
         p.cursor::after {
           height: 13px;
@@ -142,11 +143,11 @@
           if (eHeader.textContent.length > 0 || eParagraph.textContent.length > 0) {
             // If paragraph still has text, continue erasing, otherwise switch to the header.
             if (eParagraph.textContent.length > 0) {
-              eParagraph.textContent(eParagraph.textContent.substring(0, eParagraph.textContent.length - 1));
+              eParagraph.textContent = eParagraph.textContent.substring(0, eParagraph.textContent.length - 1);
             } else if (eHeader.textContent.length > 0) {
               eParagraph.classList.remove("cursor");
               eHeader.classList.add("cursor");
-              eHeader.textContent(eHeader.textContent.substring(0, eHeader.textContent.length - 1));
+              eHeader.textContent = eHeader.textContent.substring(0, eHeader.textContent.length - 1);
             }
             setTimeout(function() {
               typeWriter(id, ar);
